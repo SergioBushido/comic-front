@@ -1,0 +1,17 @@
+<h2>New Fille</h2>
+<form [formGroup]="fileForm"
+      (ngSubmit)="onSubmit()">
+    <label for="file">File:</label>
+    <input
+        id="file"
+        type="file"
+        (change)="onFileSelect($event)"
+        formControlName="file">
+    <div *ngIf="file.touched && file.errors" class="errorMessage">
+        <span *ngIf="file.errors['required']">File is required</span>
+    </div>
+    <br />
+    
+    <button type="submit" [disabled]="fileForm.invalid">Save
+    </button>
+</form>

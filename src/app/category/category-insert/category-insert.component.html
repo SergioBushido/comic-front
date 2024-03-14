@@ -1,0 +1,16 @@
+<h2>New Category</h2>
+<form [formGroup]="insertForm"
+      (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input
+        id="name"
+        type="text"
+        formControlName="name">
+    <div *ngIf="name.touched && name.errors" class="errorMessage">
+        <span *ngIf="name.errors['required']">Name is required</span>
+    </div>
+    <br />
+    
+    <button type="submit"
+        [disabled]="insertForm.invalid">Save</button>
+</form>

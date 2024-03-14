@@ -1,0 +1,20 @@
+@if (category$ | async; as category) {
+    <div class="side-form">
+        <h2>{{category.name | uppercase}}</h2>
+     
+            <button (click)="confirm.showModal()">Delete Category</button>
+            <dialog #confirm>
+            <p>Are you sure to delete this category ?</p>
+            <div class="right">
+                <button (click)="deleteCategory(category.id)" autofocus>Ok</button>
+                &nbsp;
+                <button (click)="confirm.close()">Cancel</button>
+            </div>
+            </dialog>
+        <p>
+        <button routerLink="/categories"> Back to list</button>
+        </p>
+    </div>
+} @else {
+    <h2 class="loading">Loading category</h2>
+}

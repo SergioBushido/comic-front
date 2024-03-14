@@ -1,0 +1,21 @@
+<header>
+  <h1>
+    {{ title }}
+  </h1>
+
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/categories" routerLinkActive="active">Categories</a>
+    <a routerLink="/products" routerLinkActive="active">Products</a>
+    <a routerLink="/upload" routerLinkActive="active">Upload</a>
+    <a routerLink="/admin" routerLinkActive="active">Admin</a>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <hr>
+  <a href="http://www.sergio.com" taget="_blank">www.sergio.com</a> 2024 (using Angular {{version}})

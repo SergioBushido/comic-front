@@ -1,0 +1,42 @@
+@if (errorMessage) {
+<div class="errorMessage">
+    {{ errorMessage }}
+  </div>
+} @else {
+  <div>
+    <h2>{{ title }}</h2>
+    @if (hasCategories()) {
+      <div class="right">
+        {{ categoriesNumber() }} categories listed
+       </div>
+
+      <div>
+        <button (click)="sortList('name')" [class.currentSort]="sorter.includes('name')">Sort by name</button>
+      </div>
+
+      <ul class="categories">
+        @for (category of categories() | orderBy:[sorter] | slice:start:end; track category.id) {
+            <li [title]="category | json" (click)="onSelect(category)">
+              <span class="name">{{ category.name | uppercase }}</span>
+            </li>
+        } @empty {
+            <li>No categories</li>
+        }
+      </ul>
+
+      <div class="left">
+        <a routerLink="insert">Add new category...</a>
+      </div>
+
+      <div class="right">
+        <button (click)="previousPage()" [disabled]="start == 0">< Previous Page</button>
+        Page {{ currentPage }}
+        @if (categoriesNumber() > end) {
+            <button (click)="nextPage()">Next Page ></button>
+        }
+      </div>
+    } @else {
+        <h2 class="loading">Loading categories</h2>
+    }
+  </div>
+}

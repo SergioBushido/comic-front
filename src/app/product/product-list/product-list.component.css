@@ -1,4 +1,4 @@
-.products {
+/* .products {
   margin: 0;
   list-style-type: none;
   padding: 0;
@@ -85,4 +85,117 @@
 .currentSort {
   background-color: #5C44E4;
   color: #fff;
+} */
+.errorMessage {
+  color: #d9534f;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.right, .left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button.currentSort {
+  background-color: #5C44E4;
+  color: white;
+}
+
+.products {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.products li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #EEE;
+  color: #333;
+  margin: 0.5em 0;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.products li .name, 
+.products li .description, 
+.products li .price {
+  padding: 0.8em 0.7em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.products li .name {
+  flex-grow: 1;
+  background-color: #5C44E4;
+  color: white;
+  margin-right: 1em;
+  border-radius: 4px 0 0 4px;
+  text-align: left;
+}
+
+.products li .description {
+  flex-grow: 2;
+  color: #333;
+}
+
+.products li .price {
+  flex-grow: 0;
+  background-color: #5C44E4;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  text-align: right;
+}
+
+nav a {
+  color: #007bff;
+  text-decoration: none;
+  padding: 5px 15px;
+  margin: 0 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eaeaea;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #0056b3;
 }

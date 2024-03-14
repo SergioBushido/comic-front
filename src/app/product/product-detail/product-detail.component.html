@@ -1,8 +1,13 @@
 @if (product$ | async; as product) {
     <div class="side-form">
-        <h2>{{product.name | uppercase}}</h2>
-     
-        <h3>{{product.description}}</h3>
+        <h1>PRODUCT DETAIL</h1>
+        <h2>
+            Name <br>
+            {{ product.name | uppercase }}
+          </h2>
+          <br>    
+        <h3>Description <br>{{product.description}}</h3>
+        <br>
         <p>Price: {{product.price | currency:'€':'symbol-narrow':'.2'}}</p>
         <p>Oferta? {{product.offer}}</p>
         

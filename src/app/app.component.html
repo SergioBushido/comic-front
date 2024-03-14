@@ -1,21 +1,38 @@
 <header>
-  <h1>
-    {{ title }}
-  </h1>
-
-  <nav>
-    <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a routerLink="/categories" routerLinkActive="active">Categories</a>
-    <a routerLink="/products" routerLinkActive="active">Products</a>
-    <a routerLink="/upload" routerLinkActive="active">Upload</a>
-    <a routerLink="/admin" routerLinkActive="active">Admin</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">ComicFront</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/categories" routerLinkActive="active">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/upload" routerLinkActive="active">Upload</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active">Admin</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </header>
 
-<main>
+<main role="main" class="container">
   <router-outlet></router-outlet>
 </main>
 
-<footer>
-  <hr>
-  <a href="http://www.sergio.com" taget="_blank">www.sergio.com</a> 2024 (using Angular {{version}})
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">Visit my website at <a href="http://www.sergio.com" target="_blank">www.sergio.com</a> © 2024 (using Angular {{ version }})</span>
+  </div>
+</footer>

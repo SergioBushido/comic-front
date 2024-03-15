@@ -1,20 +1,35 @@
-@if (category$ | async; as category) {
+<div *ngIf="category; else loading">
     <div class="side-form">
-        <h2>{{category.name | uppercase}}</h2>
-     
-            <button (click)="confirm.showModal()">Delete Category</button>
-            <dialog #confirm>
-            <p>Are you sure to delete this category ?</p>
+        <label for="name">Name:</label>
+        <p>{{ category.name | uppercase }}</p>
+        <br>
+        <button class="edit" (click)="editMode = true">Edit Category</button>
+        <button class="delete" (click)="confirm.showModal()">Delete Category</button>
+        <dialog #confirm>
+            <p>Are you sure you want to delete this category?</p>
             <div class="right">
-                <button (click)="deleteCategory(category.id)" autofocus>Ok</button>
+                <button (click)="deleteCategory(category.id!)" autofocus>Ok</button>
                 &nbsp;
                 <button (click)="confirm.close()">Cancel</button>
             </div>
-            </dialog>
-        <p>
-        <button routerLink="/categories"> Back to list</button>
-        </p>
+        </dialog>
+
+        <div *ngIf="editMode">
+            <form (ngSubmit)="updateCategory(category)" #categoryForm="ngForm">
+                <label for="categoryName">Category Name:</label>
+                <input type="text" id="categoryName" [(ngModel)]="category.name" name="name" required>
+
+                <button class="update" type="submit">Update</button>
+                <button class="cancel" type="button" (click)="editMode = false">Cancel</button>
+            </form>
+        </div>
+
+        <div>
+            <br>
+            <button class="back" routerLink="/categories" >Back to list</button>
+        </div>
     </div>
-} @else {
-    <h2 class="loading">Loading category</h2>
-}
+</div>
+<ng-template #loading>
+    <h2 class="loading">Loading category...</h2>
+</ng-template>

@@ -1,3 +1,4 @@
+<!-- Esta parte superior es el header -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">ComicFront</a>
@@ -26,11 +27,12 @@
     </div>
   </nav>
 </header>
-
+<!-- Esta parte es cuerpo -->
 <main role="main" class="container">
-  <router-outlet></router-outlet>
+  <router-outlet></router-outlet><!-- es una palabra reservada que representa el array de app.routes
+  y a partir de ahi carga toda la fiesta de homecomponent-->
 </main>
-
+<!-- Esta parte es el footer -->
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
     <span class="text-muted">Visit my website at <a href="http://www.sergio.com" target="_blank">www.sergio.com</a> © 2024 (using Angular {{ version }})</span>

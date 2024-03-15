@@ -121,6 +121,10 @@ button:hover {
   background-color: #0056b3;
 }
 
+button, a {
+  color: white;
+}
+
 button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;

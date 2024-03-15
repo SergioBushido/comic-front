@@ -31,6 +31,11 @@ export class CategoryService {
     );
   }
 
+  // intentando actualizar
+  updateCategory(id: number, category: Category): Observable<Category> {
+    return this.http.put<Category>(`${this.baseUrl}/${this.category}/${id}`, category);
+  }
+
   initCategories() {
     let url: string = `${this.baseUrl}/categories`;
 

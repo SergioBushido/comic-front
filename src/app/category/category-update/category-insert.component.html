@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Update Category</h2>
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Category Name:</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+        <div *ngIf="categoryForm.get('name')?.errors && categoryForm.get('name')?.touched" class="error">
+          <div *ngIf="categoryForm.get('name')?.errors?.['required']">Name is required.</div>
+          <div *ngIf="categoryForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!categoryForm.valid">Update</button>
+    </form>
+  </div>
+  
